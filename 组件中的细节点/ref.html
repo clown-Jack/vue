@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>ref获取dom节点</title>
+       <script src="../vue.js"></script>
+   </head>
+   <body>
+        <div id="app">
+            <div @click="handleClick" ref="Hello">Hello word!</div>
+        </div>
+
+        <script>
+           var vm=new Vue({
+               el:'#app',
+               methods:{
+                  handleClick:function(){
+                      console.log("1")
+                    //   this.$refs是页面全部ref的集合
+                    // this.$refs.Hello是页面的dom节点
+                      console.log(this.$refs)
+                      console.log(this.$refs.Hello)
+                  }
+               }
+           })
+        </script>
+   </body>
+</html>

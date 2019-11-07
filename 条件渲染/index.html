@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="Utf-8">
+        <title>vue中的条件渲染</title>
+        <script src="../vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div v-if="show">{{message}}</div>
+            <!-- <div v-show="show">{{message}}</div> -->
+            <!-- v-else-if -->
+            <div v-else>Bye World</div>
+        </div>
+         
+        <script>
+
+            // v-if和v-show都可以控制元素是否显示，v-if 如果是false对应标签在页面上被移除
+            // v-show 如果是false对应dom标签已经被加载只不过是display:none
+            // 所以v-show的性能高一些
+
+
+            //vue中在元素中加key可以区别于其他元素，在页面中是唯一的，vue算法中容易复用其他相同元素
+             var vm=new Vue({
+                 el:"#app",
+                 data:{
+                    message:"Hello World",
+                    show:false
+                 },
+                 methods:{
+
+                 }
+
+             })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>模版语法</title>
+        <script src="../vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 差值表达式 -->
+            {{test+'hello'}}
+            <!-- 相当于innerText -->
+            <div v-text="test+'hello'"></div>
+            <!-- 相当于innerHtml -->
+            <div v-html="test"></div>
+        </div>
+        <script>
+              var vm=new Vue({
+                  el:"#app",
+                  data:{
+                      test:"<h1>qwe</h1>",
+                  }
+              })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jqueryToDo</title>
+	<script type="text/javascript" src="./jquery-3.4.0.js"></script>
+</head>
+<body>
+    <input type="text" name="">
+    <button id="Btn">提交</button>
+    <ul></ul>
+
+    <script type="text/javascript">
+    	function Page(){}
+
+    	$.extend(Page.prototype,{
+    		init:function() {
+    			this.BtnEvents();
+    		},
+    		BtnEvents:function(){
+    			$("#Btn").on('click',$.proxy(this.handleBtn,this));
+    		},
+    		handleBtn:function(){
+    			var inputEvent=$("input[type='text']");
+    			var inputValue=inputEvent.val();
+    			$("ul").append("<li>"+inputValue+"</li>");
+    			inputEvent.val("");
+    		}
+    	})
+
+
+        var page= new Page();
+        page.init();
+
+    </script>
+
+</body>
+</html>

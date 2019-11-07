@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hello World</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+     <div id="app">{{content}}</div>
+
+
+     <script type="text/javascript">
+     	var app=new Vue({
+     		el:"#app",
+     		data:{
+     			content:"Hello World"
+     		}
+     	})
+
+        setTimeout(function(){
+        	//$data是data的别名
+        	app.$data.content="bye World";
+        },2000)
+     </script>
+</body>
+</html>
